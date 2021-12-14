@@ -1,0 +1,11 @@
+@keyframes scroll_down {
+  0% {
+    height: 0;
+  }
+  25% {
+    height: 100px;
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}

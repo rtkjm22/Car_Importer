@@ -1,0 +1,25 @@
+//変数
+
+//ブレイクポイント
+$breakpoints: (
+  'xs': 'screen and (max-width: 450px)',
+  'sm': 'screen and (max-width: 600px)',
+  'md': 'screen and (max-width: 820px)',
+  'lg': 'screen and (max-width: 1100px)',
+  'xl': 'screen and (max-width: 1300px)',
+) !default;
+
+// 画像ディレクトリ
+$imgDir: './img/';
+
+// サイトカラー
+$black: #000;
+$white: #eee;
+$red: #960821;
+
+$black08: #000000dd;
+$red08:   #960821dd;
+
+
+// トランジション
+$transition: .25s;
