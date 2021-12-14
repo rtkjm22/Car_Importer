@@ -1,0 +1,65 @@
+@forward "../setting/animation";
+@use "../setting/variables" as v;
+@use "../mixin/mixin" as m;
+
+.ly_visual {
+  position: relative;
+  height: 100vh;
+}
+
+.bl_visual {
+  &_img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    z-index: -1;
+  }
+  &_title {
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 3vw;
+    position: absolute;
+    top: 36%;
+    left: 5%;
+  }
+  &_sns {
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+    color: #aaa;
+    display: flex;
+    align-items: flex-start;
+    dt,
+    dd,
+    ul,
+    ul li {
+      display: flex;
+    }
+    dt {
+      text-transform: uppercase;
+    }
+    ul li{
+      margin: 0 10px;
+    }
+    img {
+      width: 20px;
+    }
+  }
+}
+
+.bl_slider {
+  height: 91vh;
+}
+
+body.appear .ly_visual::after{
+  content: '';
+  background-color: v.$red;
+  width: 0;
+  height: 12%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  animation: visualbgRLExtendAnime .2s 1s forwards ease-in-out;
+}

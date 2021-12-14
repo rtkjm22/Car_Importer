@@ -10,12 +10,13 @@ $breakpoints: (
 ) !default;
 
 // 画像ディレクトリ
-$imgDir: './img/';
+$imgPass: '../../src/img/';
 
 // サイトカラー
 $black: #000;
 $white: #eee;
 $red: #960821;
+$gray: #ffffff33;
 
 $black08: #000000dd;
 $red08:   #960821dd;

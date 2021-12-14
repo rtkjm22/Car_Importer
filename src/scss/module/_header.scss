@@ -1,2 +1,36 @@
-// @use "../setting/variables" as v;
-// @use "../mixin/mixin" as m;
+@forward "../setting/animation";
+@use "../setting/variables" as v;
+@use "../mixin/mixin" as m;
+
+.ly_header {
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px 100px 20px 0;
+
+  &.UpMove {
+    position: fixed;
+    width: 100%;
+    animation: UpAnime .5s forwards;
+  }
+  &.DownMove {
+    position: fixed;
+    width: 100%;
+    animation: DownAnime .5s forwards;
+  }
+}
+
+.bl_header_logo {
+  text-transform: uppercase;
+  padding-left: 2%;
+  line-height: 1;
+  white-space: nowrap;
+  a {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,69 @@
+@forward "../setting/animation";
+@use "../setting/variables"as v;
+@use "../mixin/mixin"as m;
+
+.bl_gnav {
+  &_list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    &_child {
+      display: block;
+    }
+  }
+  &_item {
+    position: relative;
+    a {
+      display: block;
+      text-decoration: none;
+      color: v.$white;
+      padding: 20px 35px;
+      &:hover {
+        color: #fff;
+      }
+    }
+    &.has_child::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 30px;
+      width: 6px;
+      height: 6px;
+      border-top: 2px solid #eee;
+      border-right: 2px solid #eee;
+      transform: rotate(135deg);
+    }
+  }
+
+  li.has_child ul {
+    position: absolute;
+    left: 0;
+    top: 62px;
+    z-index: 4;
+    background-color: v.$gray;
+    width: 180px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all v.$transition;
+  }
+  li.has_child {
+    &:hover > ul,
+    ul li:hover > ul,
+    &:active > ul,
+    ul li :active > ul {
+      visibility: visible;
+      opacity: 1;
+    }
+    ul li a {
+      color: #fff;
+      border-bottom: 1px solid v.$gray;
+    }
+    ul li.has_child a {
+      border-bottom: none;
+    }
+    ul li a:hover,
+    ul li a:active {
+      background-color: v.$gray;
+    }
+  }
+}

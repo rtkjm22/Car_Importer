@@ -11,13 +11,116 @@
   <link rel="stylesheet" type="text/css" href="./src/css/style.css">
 </head>
 
-<body>
+<body class="appear">
 
+  <div class="ly_cont">
+    <header class="ly_header">
+      <h1 class="bl_header_logo"><a href="#">Car Importer</a></h1>
+      <div class="bl_gnavBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="bl_gnav">
+        <div class="bl_gnav_wrapper">
+          <ul class="bl_gnav_list">
+            <li class="bl_gnav_item"><a href="#">Top</a></li>
+            <li class="bl_gnav_item"><a href="#">Auto Parts</a></li>
+            <li class="bl_gnav_item has_child"><a href="#">Auto Sales</a>
+              <ul class="bl_gnav_list_child">
+                <li><a href="#">New Colors</a></li>
+                <li><a href="#">Classic Cars</a></li>
+              </ul>
+            </li>
+            <li class="bl_gnav_item"><a href="#">Auto Repair</a></li>
+            <li class="bl_gnav_item"><a href="#">Company</a></li>
+            <li class="bl_gnav_item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="bl_openSearch"></div>
+    </header><!-- /.ly_header -->
 
-  
+    <div class="bl_search">
+      <div class="bl_search_closeBtn"><span></span><span></span></div>
+      <div class="bl_search_area">
+        <form method="get" role="search">
+          <input type="text" placeholder="search">
+          <input type="submit" value="">
+        </form>
+      </div>
+    </div><!-- /.bl_search -->
+
+    <section class="ly_visual">
+
+      <div class="bl_visual_img bgExtend bgRLExtendTrigger">
+        <div class="bgAppearTrigger">
+          <div class="bl_slider"></div>
+        </div>
+      </div>
+
+      <h2 class="bl_visual_title">
+        <span class="js_typing">Car Importer</span><br><span class="js_typing">Sales and Service</span>
+      </h2>
+
+      <dl class="bl_visual_sns">
+        <dt>Follow Us</dt>
+        <dd>
+          <ul>
+            <li><a href="#"><img src="/src/img/ico_fb.svg" alt=""></a></li>
+            <li><a href="#"><img src="/src/img/ico_tw.svg" alt=""></a></li>
+            <li><a href="#"><img src="/src/img/ico_insta.svg" alt=""></a></li>
+          </ul>
+        </dd>
+      </dl>
+
+      <div class="bl_scrollDown"><span>Scroll</span></div>
+    </section><!-- / .ly_visual -->
+
+    <main class="ly_main">
+
+    </main><!-- / .ly_main -->
+
+    <footer class="ly_footer">
+      <div class="bl_footer_info">
+        <p class="bl_footer_info_logo">CAR IMPORTER</p>
+        <address>〒123-4567 東京都新宿区 1-2-3</address>
+        <ul>
+          <li>
+            <dl>
+              <dt>TEL</dt>
+              <dd><a href="#">01-2345-6789</a></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>営業時間</dt>
+              <dd>平日 10:00〜11:00</dd>
+              <dd>土・日・祝 10:00〜10:30</dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bl_footer_link">
+        <ul>
+          <li><a href="#">Top</a></li>
+          <li><a href="#">Auto Parts</a></li>
+          <li><a href="#">Auto Sales</a></li>
+          <li><a href="#">Auto Repair</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <small>Copyright &copy; Car Importer All rights Reserved.</small>
+      </div>
+      <p class="bl_topBtn bl_topBtn__hide"><a href="#"><span></span></a></p>
+    </footer><!-- / .ly_footer -->
+  </div><!-- /.ly_cont -->
 
 
   <script type="text/javascript" src="./src/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="./src/js/lib/vegas.js"></script>
+  <script type="text/javascript" src="./src/js/lib/shuffle_text.js"></script>
   <script type="text/javascript" src="./src/js/main.js"> </script>
 </body>
 

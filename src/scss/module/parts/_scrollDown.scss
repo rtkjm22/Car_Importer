@@ -1,0 +1,32 @@
+@forward "../../setting/animation";
+@use "../../setting/variables"as v;
+@use "../../mixin/mixin"as m;
+
+.bl_scrollDown {
+  position: absolute;
+  right: 40px;
+  bottom: 3%;
+  height: 50px;
+  background-color: rgb(107, 107, 235);
+  white-space: nowrap;
+  span {
+    position: absolute;
+    color: v.$white;
+    font-size: .7rem;
+    letter-spacing: .05em;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    left: -23px;
+    top: -31px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 30px;
+    background-color: v.$white;
+    animation: scrollDown 1.5s ease-in-out infinite;
+    opacity: 0;
+  }
+}

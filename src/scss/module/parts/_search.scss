@@ -1,0 +1,108 @@
+@forward "../../setting/animation";
+@use "../../setting/variables"as v;
+@use "../../mixin/mixin"as m;
+
+.bl_openSearch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url('/src/img/icon_search.svg') no-repeat 15px center;
+  background-size: 20px 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.bl_search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: all .4s;
+  width: 100%;
+  height: 100vh;
+
+  &_area {
+    display: none;
+  }
+
+  &_closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    span {
+      display: inline-block;
+      position: absolute;
+      left: 16px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: v.$white;
+      &:nth-of-type(1) {
+        top: 21px;
+        width: 50%;
+        transform: translateY(6px) rotate(-135deg);
+      }
+      &:nth-of-type(2) {
+        top: 32px;
+        width: 50%;
+        transform: translateY(-5px) rotate(135deg);
+      }
+    }
+  }
+
+  form {
+    position: relative;
+    height: 66px;
+
+    input {
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+
+      &[type="text"] {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        border-bottom: 2px solid #666;
+        transition: all .5s;
+        letter-spacing: .05em;
+
+        &:focus,
+        &:hover {
+          background-color: #444;
+        }
+      }
+
+      &[type="submit"] {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        width: 60px;
+        height: 60px;
+        background: url("/src/img/icon_search.svg") no-repeat 15px center;
+        background-size: 25px 25px;
+      }
+    }
+  }
+}
+
+.bl_search__active {
+  opacity: 1;
+  z-index: 9999;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bl_search_area {
+    display: block;
+    width: 80%;
+    position: relative;
+  }
+}

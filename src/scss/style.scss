@@ -17,6 +17,7 @@
 // モジュールファイル
 @use './module/header';
 @use './module/gnav';
+@use './module/visual';
 @use './module/service';
 @use './module/news';
 @use './module/gallery';
@@ -25,9 +26,11 @@
 
 // モジュールパーツ
 @use "./module/parts/loader";
+@use "./module/parts/search";
 @use './module/parts/splash';
+@use './module/parts/scrollDown';
 @use './module/parts/topBtn';
 // etc...
 
-// @use "./pulgins/";
+@use "./pulgins/vegas";
 

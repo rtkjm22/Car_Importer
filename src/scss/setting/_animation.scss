@@ -1,11 +1,69 @@
-@keyframes scroll_down {
+@keyframes UpAnime {
   0% {
-    height: 0;
-  }
-  25% {
-    height: 100px;
+    opacity: 1;
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(100px);
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+@keyframes DownAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes scrollDown {
+  0% {
+    transform-origin: left;
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    transform-origin: left;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    transform-origin: right;
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes visualbgRLExtendAnime {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 40%;
+  }
+}
+
+@keyframes LeftAnime {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes RightAnime {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100px);
   }
 }

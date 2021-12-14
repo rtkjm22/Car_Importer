@@ -45,9 +45,19 @@ body {
 }
 
 h1,
-h2 {
+h2,
+.bl_gnav,
+.bl_scrollDown span,
+.bl_visual dt,
+.bl_footer_info_logo {
   font-family: 'Oswald', sans-serif;
   letter-spacing: .2em;
+}
+
+small,
+.bl_footer_link {
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0;
 }
 
 /*	heading	*/
