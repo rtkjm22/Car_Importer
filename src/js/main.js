@@ -18,12 +18,14 @@ $('.bl_tab_btn a').click(function () {
   const idName = $(this).attr('href');
   GethashID(idName);
   return false;
-})
+});
 
 $(window).on('load', function () {
   $('.bl_tab_btn li:first-of-type').addClass('is_active');
   $('.bl_tab_item:first-of-type').addClass('is_active');
 });
+
+
 
 // vegas ファーストビューのスライドショー 148
 const windowWidth = window.innerWidth || document.documentElement.clientWidth || 0;
@@ -67,6 +69,8 @@ function mainVisual(imgs) {
   });
 }
 
+
+
 // 検索バーの表示/非表示 194
 $('.bl_openSearch').click(function () {
   $('.bl_search').addClass('bl_search__active');
@@ -74,6 +78,8 @@ $('.bl_openSearch').click(function () {
 $('.bl_search_closeBtn').click(function () {
   $('.bl_search').removeClass('bl_search__active');
 });
+
+
 
 // バックグランド関連のアニメーション 209
 function fadeAnime() {
@@ -118,6 +124,8 @@ function fadeAnime() {
     }
   });
 }
+
+
 
 // shuffle_text 文字がランダムに出現 262
 let shuffleText_arr = [];
