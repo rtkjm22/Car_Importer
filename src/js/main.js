@@ -142,7 +142,7 @@ function TypingAnime() {
     if (scroll >= elemPos - windowHeight) {
       if (!$(this).hasClass('endAnime')) {
         shuffleText_arr[i].start();
-        shuffleText_arr[i].duration = 800;
+        shuffleText_arr[i].duration = 2000;
         $(this).addClass('endAnime');
       }
     } else {

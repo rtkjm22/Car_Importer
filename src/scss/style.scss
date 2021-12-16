@@ -26,8 +26,8 @@
 
 // モジュールパーツ
 @use "./module/parts/splash";
-@use "./module/parts/loader";
 @use "./module/parts/bg";
+@use "./module/parts/loader";
 @use "./module/parts/search";
 @use './module/parts/scrollDown';
 @use './module/parts/topBtn';
@@ -35,7 +35,6 @@
 @use './module/parts/kagiBtn';
 @use './module/parts/tab';
 @use './module/parts/zoomInRotate';
-// etc...
 
 @use "./plugins/vegas";
 
