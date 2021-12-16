@@ -1,0 +1,14 @@
+@forward '../../setting/animation';
+@use '../../setting/variables' as v;
+@use '../../mixin/mixin' as m;
+
+.zoomInRotate {
+  backface-visibility: hidden;
+  img {
+    transform: scale(1);
+    transition: all v.$transition ease-in;
+  }
+  a:hover img {
+    transform: rotate(5deg) scale(1.2);
+  }
+}

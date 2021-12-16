@@ -1,4 +1,29 @@
-// 
+// タブメニュー関連 103
+function GethashID(hashIDName) {
+  if (hashIDName) {
+    $('.bl_tab_btn li').find('a').each(function () {
+      let idName = $(this).attr('href');
+      if (idName == hashIDName) {
+        let parentElm = $(this).parent();
+        $('.bl_tab_btn li').removeClass('is_active');
+        $(parentElm).addClass('is_active');
+        $('.bl_tab_item').removeClass('is_active');
+        $(hashIDName).addClass('is_active');
+      }
+    });
+  }
+}
+
+$('.bl_tab_btn a').click(function () {
+  const idName = $(this).attr('href');
+  GethashID(idName);
+  return false;
+})
+
+$(window).on('load', function () {
+  $('.bl_tab_btn li:first-of-type').addClass('is_active');
+  $('.bl_tab_item:first-of-type').addClass('is_active');
+});
 
 // vegas ファーストビューのスライドショー 148
 const windowWidth = window.innerWidth || document.documentElement.clientWidth || 0;
@@ -50,6 +75,50 @@ $('.bl_search_closeBtn').click(function () {
   $('.bl_search').removeClass('bl_search__active');
 });
 
+// バックグランド関連のアニメーション 209
+function fadeAnime() {
+  $('.bgappearTrigger').each(function () {
+    var elemPos = $(this).offset().top - 50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('bgappear');
+    } else {
+      $(this).removeClass('bgappear');
+    }
+  });
+  $('.bgLRextendTrigger').each(function () {
+    var elemPos = $(this).offset().top - 50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('bgLRextend');
+    } else {
+      $(this).removeClass('bgLRextend');
+    }
+  });
+  $('.bgRLextendTrigger').each(function () {
+    var elemPos = $(this).offset().top - 50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('bgRLextend');
+    } else {
+      $(this).removeClass('bgRLextend');
+    }
+  });
+  $('.ly_service_area').each(function () {
+    var elemPos = $(this).offset().top - 50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('startwd');
+    } else {
+      $(this).removeClass('startwd');
+    }
+  });
+}
+
 // shuffle_text 文字がランダムに出現 262
 let shuffleText_arr = [];
 function TypingInit() {
@@ -78,6 +147,7 @@ function TypingAnime() {
 $(window).scroll(function () {
   TypingInit();
   TypingAnime();
+  fadeAnime();
 });
 
 TypingInit();

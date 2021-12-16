@@ -1,0 +1,22 @@
+@forward "../setting/animation";
+@use "../setting/variables"as v;
+@use "../mixin/mixin"as m;
+
+.ly_gallery {
+  margin-bottom: 5%;
+  columns: 4;
+  padding: 0 15px;
+  li {
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  img {
+    opacity: .5;
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

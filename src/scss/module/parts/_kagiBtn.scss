@@ -1,0 +1,37 @@
+@forward '../../setting/animation';
+@use '../../setting/variables' as v;
+@use '../../mixin/mixin' as m;
+
+.bl_kagiBtn {
+  position: relative;
+  color: v.$white;
+  padding: 5px 40px;
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border: 1px solid v.$white;
+    width: 10px;
+    height: 10px;
+    transition: all .3s ease-in-out;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+    border-width: 1px 0 0 1px;
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 1px 1px 0;
+  }
+  &:hover::before,
+  &:hover::after {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border-color: v.$white;
+  }
+}

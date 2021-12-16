@@ -1,0 +1,50 @@
+@forward "../../setting/animation";
+@use "../../setting/variables"as v;
+@use "../../mixin/mixin"as m;
+
+.bl_tab {
+  width: 70%;
+  &_btn {
+    position: relative;
+    top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      text-align: center;
+      white-space: nowrap;
+    }
+    a {
+      display: block;
+      border-top: 1px solid transparent;
+      border-right: 1px solid v.$black;
+      border-left: 1px solid transparent;
+      padding: 8px 30px;
+      background-color: v.$gray;
+    }
+    li.is_active a {
+      background: v.$black;
+      border-top: 1px solid v.$white;
+      border-color: v.$white;
+    }
+  }
+  &_list {
+    border-top: 1px solid v.$white;
+    border-left: 1px solid v.$white;
+  }
+  &_item {
+    display: none;
+    opacity: 0;
+    padding: 20px 40px;
+    li {
+      padding: 20px 0;
+    }
+    time {
+      display: block;
+      color: v.$white;
+    }
+    &.is_active {
+      display: block;
+      animation: displayAnime 2s forwards;
+    }
+  }
+}

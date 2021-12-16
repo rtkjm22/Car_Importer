@@ -1,0 +1,40 @@
+@forward "../setting/animation";
+@use "../setting/variables"as v;
+@use "../mixin/mixin"as m;
+
+.ly_service {
+  padding: 10% 0 10% 15%;
+  &_area {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10% 0 0 10%;
+    position: relative;
+    &::after {
+      opacity: 0;
+    }
+    &.startwd::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 0;
+      width: 80%;
+      height: 60vh;
+      background-color: #232323;
+      z-index: -1;
+      animation: servicebgRLextendAnime .9s forwards ease-in-out;
+    }
+  }
+}
+
+.bl_serviceImg {
+  position: relative;
+  overflow: hidden;
+  width: 30%;
+  height: 60vh;
+  &_img {
+    height: 60vh;
+    background: url("/src/img/01.jpg") no-repeat center;
+    background-size: cover;
+  }
+}

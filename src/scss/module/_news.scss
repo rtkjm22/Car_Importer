@@ -1,0 +1,30 @@
+@forward "../setting/animation";
+@use "../setting/variables"as v;
+@use "../mixin/mixin"as m;
+
+.ly_newsImg {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 90%;
+  height: 60vh;
+  &_img {
+    height: 60vh;
+    background: url("/src/img/02.jpg") no-repeat center;
+    background-size: cover;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70%;
+      height: 10vh;
+      background-color: #000;
+      z-index: 2;
+    }
+  }
+}
+
+.ly_news {
+  padding: 0 0 5% 15%;
+}

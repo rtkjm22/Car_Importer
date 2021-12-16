@@ -72,4 +72,10 @@ h2 {
   overflow-x: hidden;
   z-index: 1;
   position: relative;
+  opacity: 0;
+}
+
+body.appear .ly_cont {
+  opacity: 0;
+  animation: displayAnime 3s .8s forwards;
 }

@@ -1,0 +1,41 @@
+@forward '../../setting/animation';
+@use '../../setting/variables' as v;
+@use '../../mixin/mixin' as m;
+
+.bgextend {
+  animation: displayAnime 1s forwards;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgappear {
+  animation: displayAnime 1s .6s forwards;
+  opacity: 0;
+}
+
+.bgLRextend::before {
+  animation: bgLRextendAnime 1s forwards;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #181818;
+}
+
+.bgRLextend::before {
+  animation: bgRLextendAnime 1s forwards;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #181818;
+}
+
+.bgappearTrigger,
+.bgUDextendTrigger,
+.bgDUextendTrigger,
+.bgRLextendTrigger,
+.bgLRextendTrigger {
+  opacity: 0;
+}

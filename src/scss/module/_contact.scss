@@ -1,0 +1,40 @@
+@forward "../setting/animation";
+@use "../setting/variables"as v;
+@use "../mixin/mixin"as m;
+
+.ly_contact {
+  border-top: 1px solid v.$white;
+  border-bottom: 1px solid v.$white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &_detail {
+    width: 65%;
+    border-right: 1px solid v.$white;
+    text-align: center;
+    padding: 20px;
+    h2 {
+      margin-bottom: 5px;
+      font-size: 1.5rem;
+    }
+  }
+  &_tel {
+    width: 35%;
+    p {
+      text-align: center;
+    }
+    a {
+      display: block;
+      padding: 20px;transition: all v.$transition;
+      &:hover {
+        background-color: v.$gray;
+      }
+      &:last-of-type {
+        border-top: 1px solid v.$white;
+      }
+    }
+    br {
+      display: none;
+    }
+  }
+}
