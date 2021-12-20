@@ -33,4 +33,21 @@
   a {
     font-size: 1.5rem;
   }
+  @include m.mq(lg) {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    padding: 0;
+  }
+}
+
+@include m.mq(lg) {
+  .ly_header,
+  .ly_header.UpMove,
+  .ly_header.DownMove {
+    animation: none;
+    height: auto;
+    padding: 0;
+    display: block;
+  }
 }

@@ -1,3 +1,91 @@
+// ドロップダウンメニュー
+function mqWindow() {
+  const width = $(window).width();
+  if (width <= 960) {
+    $('.has_child > a').off('click');
+    $('.has_child > a').on('click', function () {
+      const parentElm = $(this).parent();
+      $(parentElm).toggleClass('active');
+      $(parentElm).children('ul').stop().slideToggle(500);
+      return false;
+    });
+  } else {
+    $('.has_child > a').off('click');
+    $('.has_child > a').removeClass('active');
+    $('.has_child').children('ul').css('display', '');
+  }
+}
+
+
+
+// グローバルメニューの表示/非表示 23
+function FixedAnime() {
+  const elemPos = $('.ly_service').offset().top;
+  const scroll  = $(window).scrollTop();
+
+  if (scroll <= 20) {
+    $('.ly_header').addClass('DownMove');
+  } else if (scroll >= elemPos) {
+    $('.ly_header').removeClass('UpMove');
+    $('.ly_header').addClass('DownMove');
+  } else {
+    if ($('.ly_header').hasClass('DownMove')) {
+      $('.ly_header').removeClass('DownMove');
+      $('.ly_header').addClass('UpMove');
+    }
+  }
+}
+
+
+
+// ハンバーガーメニューのクリック時の挙動
+$('.bl_gnavBtn').click(function () {
+  $(this).toggleClass('active');
+  $('.bl_gnav').toggleClass('panelactive')
+});
+
+$('.bl_gnav a').click(function () {
+  $('.bl_gnavBtn').removeClass('active');
+  $('.bl_gnav').removeClass('panelactive');
+});
+
+
+
+// ページ上部まで移動するボタンの表示/非表示 60
+function setFadeElement() {
+  const windowH = $(window).height();
+  const scroll  = $(window).scrollTop();
+
+  const contentsTop_contact = Math.round($('.ly_contact').offset().top);
+  const contentsH_contact   = $('.ly_contact').outerHeight(true);
+
+  const contentsTop_footer = Math.round($('.ly_footer').offset().top);
+  const contentsH_footer   = $('.ly_footer').outerHeight(true);
+
+
+  if (scroll + windowH >= contentsTop_contact && scroll + windowH <= contentsTop_contact + contentsH_contact) {
+    $('.bl_topBtn').addClass('LeftMove');
+    $('.bl_topBtn').removeClass('RightMove');
+    $('.bl_topBtn__hide').removeClass('bl_topBtn__hide');
+  } else if (scroll + windowH >= contentsTop_footer && scroll + windowH <= contentsTop_footer + contentsH_footer) {
+    $('.bl_topBtn').addClass('LeftMove');
+    $('.bl_topBtn').removeClass('RightMove');
+  } else {
+    if (!$('.bl_topBtn__hide').length) {
+      $('.bl_topBtn').addClass('RightMove');
+      $('.bl_topBtn').removeClass('LeftMove');
+    }
+  }
+}
+$('.bl_topBtn').click(function () {
+  $('body,html').animate({
+    scrollTop: 0
+  }, 500);
+  return false;
+});
+
+
+
 // タブメニュー関連 103
 function GethashID(hashIDName) {
   if (hashIDName) {
@@ -13,13 +101,11 @@ function GethashID(hashIDName) {
     });
   }
 }
-
 $('.bl_tab_btn a').click(function () {
   const idName = $(this).attr('href');
   GethashID(idName);
   return false;
 });
-
 $(window).on('load', function () {
   $('.bl_tab_btn li:first-of-type').addClass('is_active');
   $('.bl_tab_item:first-of-type').addClass('is_active');
@@ -142,7 +228,7 @@ function TypingAnime() {
     if (scroll >= elemPos - windowHeight) {
       if (!$(this).hasClass('endAnime')) {
         shuffleText_arr[i].start();
-        shuffleText_arr[i].duration = 2000;
+        shuffleText_arr[i].duration = 800;
         $(this).addClass('endAnime');
       }
     } else {
@@ -152,11 +238,35 @@ function TypingAnime() {
 }
 
 
+$(window).resize(function () {
+  mqWindow();
+});
+
 $(window).scroll(function () {
   TypingInit();
   TypingAnime();
   fadeAnime();
+  setFadeElement();
+  FixedAnime();
 });
 
-TypingInit();
-TypingAnime();
+$(window).on('load', function () {
+  $('.bl_splash_logo').delay(1200).fadeOut('slow');
+  $('.bl_splash').delay(1500).fadeOut('slow', function () {
+    $('body').addClass('appear');
+
+    mqWindow();
+    FixedAnime();
+    setFadeElement();
+
+    const hashName = location.hash;
+    GethashID(hashName);
+  });
+
+  $('.bl_splash_bg').on('animationend', function () {
+    fadeAnime();
+    $('.endAnime').removeClass('endAnime');
+    TypingInit();
+    TypingAnime();
+  });
+});

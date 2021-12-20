@@ -48,3 +48,19 @@
     }
   }
 }
+
+@include m.mq(xl) {
+  .bl_tab {
+    width: 100%;
+  }
+}
+@include m.mq(md) {
+  .ly_news {
+    padding: 0 0 5% 30px;
+  }
+}
+@include m.mq(xs) {
+  .bl_tab_btn li a {
+    padding: 8px 20px;
+  }
+}

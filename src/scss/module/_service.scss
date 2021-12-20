@@ -38,3 +38,33 @@
     background-size: cover;
   }
 }
+
+@include m.mq {
+  .ly_service {
+    padding: 30% 0 10% 30px;
+  }
+}
+@include m.mq(sm) {
+  .ly_service_area section {
+    width: 100%;
+    margin-bottom: 100px;
+    padding-right: 10%;
+  }
+  .bl_serviceImg,
+  .bl_serviceImg_img {
+    width: 100%;
+    height: 40vh;
+    background-position: right;
+  }
+  .bl_serviceImg {
+    margin-bottom: 50px;
+  }
+}
+@include m.mq(xs) {
+  .ly_service_lead {
+    padding-right: 10%;
+    br {
+      display: none;
+    }
+  }
+}

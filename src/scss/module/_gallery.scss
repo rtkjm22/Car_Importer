@@ -20,3 +20,9 @@
     }
   }
 }
+
+@include m.mq(sm) {
+  .ly_gallery {
+    columns: 2;
+  }
+}

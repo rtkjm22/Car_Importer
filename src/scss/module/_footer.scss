@@ -54,3 +54,47 @@
     }
   }
 }
+
+@include m.mq(lg) {
+  .ly_footer {
+    justify-content: center;
+    padding: 5% 0;
+  }
+  .bl_footer {
+    &_info {
+      width: 100%;
+      padding-bottom: 5%;
+      margin-bottom: 5%;
+      text-align: center;
+      border-bottom: 1px solid v.$gray;
+      li:nth-of-type(2) {
+        dt::after {
+          content: '';
+          padding: 0;
+        }
+        dd {
+          display: block;
+        }
+      }
+    }
+    &_link {
+      width: auto;
+      ul {
+        justify-content: center;
+      }
+      small {
+        padding: 10% 0;
+        text-align: center;
+      }
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include m.mq(xs) {
+  .bl_footer_link ul li {
+    margin: 0 10%;
+  }
+}

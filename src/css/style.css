@@ -697,6 +697,54 @@ a {
 				        transform: scaleX(0);
 		}
 }
+@-webkit-keyframes splashAnime {
+		0% {
+				-webkit-transform-origin: left;
+				        transform-origin: left;
+				-webkit-transform: scaleX(0);
+				        transform: scaleX(0);
+		}
+		50% {
+				-webkit-transform-origin: left;
+				        transform-origin: left;
+				-webkit-transform: scaleX(1);
+				        transform: scaleX(1);
+		}
+		50.001% {
+				-webkit-transform-origin: right;
+				        transform-origin: right;
+		}
+		100% {
+				-webkit-transform-origin: right;
+				        transform-origin: right;
+				-webkit-transform: scaleX(0);
+				        transform: scaleX(0);
+		}
+}
+@keyframes splashAnime {
+		0% {
+				-webkit-transform-origin: left;
+				        transform-origin: left;
+				-webkit-transform: scaleX(0);
+				        transform: scaleX(0);
+		}
+		50% {
+				-webkit-transform-origin: left;
+				        transform-origin: left;
+				-webkit-transform: scaleX(1);
+				        transform: scaleX(1);
+		}
+		50.001% {
+				-webkit-transform-origin: right;
+				        transform-origin: right;
+		}
+		100% {
+				-webkit-transform-origin: right;
+				        transform-origin: right;
+				-webkit-transform: scaleX(0);
+				        transform: scaleX(0);
+		}
+}
 /*	ベース	*/
 *,
 *::before,
@@ -746,7 +794,7 @@ h1,
 h2,
 .bl_gnav,
 .bl_scrollDown span,
-.bl_visual dt,
+.bl_visual_sns dt,
 .bl_footer_info_logo {
 		font-family: "Oswald", sans-serif;
 		letter-spacing: 0.2em;
@@ -818,7 +866,26 @@ body.appear .ly_cont {
 .bl_header_logo a {
 		font-size: 1.5rem;
 }
+@media screen and (max-width: 960px) {
+		.bl_header_logo {
+				position: absolute;
+				top: 22px;
+				left: 20px;
+				padding: 0;
+		}
+}
 
+@media screen and (max-width: 960px) {
+		.ly_header,
+.ly_header.UpMove,
+.ly_header.DownMove {
+				-webkit-animation: none;
+				        animation: none;
+				height: auto;
+				padding: 0;
+				display: block;
+		}
+}
 .bl_gnav_list {
 		list-style: none;
 		display: -webkit-box;
@@ -885,6 +952,153 @@ body.appear .ly_cont {
 		background-color: #ffffff33;
 }
 
+@media screen and (max-width: 1200px) {
+		.bl_gnav_item a {
+				padding: 20px;
+		}
+		.bl_gnav_item.has_child::before {
+				left: 0;
+		}
+		.bl_gnav_list_child li a {
+				padding: 10px 20px;
+		}
+}
+@media screen and (max-width: 960px) {
+		.bl_gnav {
+				padding: 0;
+				position: fixed;
+				z-index: 999;
+				top: -120%;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				background-color: #000;
+				-webkit-transition: all 0.6s;
+				transition: all 0.6s;
+		}
+		.bl_gnav_list {
+				display: block;
+		}
+		.bl_gnav_item a {
+				border-bottom: 1px solid #eee;
+		}
+		.bl_gnav_item.has_child::before {
+				left: 20px;
+		}
+		.bl_gnav_item.has_child.active::before {
+				-webkit-transform: rotate(-45deg);
+				        transform: rotate(-45deg);
+		}
+		.bl_gnav_list_child li.has_child::before {
+				-webkit-transform: rotate(135deg);
+				        transform: rotate(135deg);
+				left: 20px;
+		}
+		.bl_gnav.panelactive {
+				top: 0;
+		}
+		.bl_gnav.panelactive .bl_gnav_wrapper {
+				position: fixed;
+				z-index: 999;
+				width: 100%;
+				height: 100vh;
+				overflow: auto;
+				-webkit-overflow-scrolling: touch;
+		}
+		.bl_gnav ul {
+				width: 90%;
+				margin: 100px auto 0;
+		}
+		.bl_gnav ul ul {
+				width: 100%;
+				margin: 0;
+		}
+		.bl_gnav ul li.has_child ul {
+				position: relative;
+				left: 0;
+				top: 0;
+				width: 100%;
+				visibility: visible;
+				opacity: 1;
+				display: none;
+				-webkit-transition: none;
+				transition: none;
+				-webkit-transform: none;
+				        transform: none;
+		}
+		.bl_gnav li {
+				list-style: none;
+				text-align: center;
+		}
+		.bl_gnav li a {
+				color: #aaa;
+				padding: 10px;
+				display: block;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				font-weight: bold;
+		}
+		.bl_gnav li a::after {
+				display: none;
+		}
+}
+@media screen and (max-width: 960px) {
+		.bl_gnavBtn {
+				display: block;
+				position: fixed;
+				z-index: 9999;
+				top: 10px;
+				right: 70px;
+				cursor: pointer;
+				width: 50px;
+				height: 50px;
+		}
+		.bl_gnavBtn_area {
+				-webkit-transition: all 0.4s;
+				transition: all 0.4s;
+		}
+		.bl_gnavBtn span {
+				display: inline-block;
+				-webkit-transition: all 0.4s;
+				transition: all 0.4s;
+				position: absolute;
+				left: 14px;
+				height: 3px;
+				border-radius: 2px;
+				background-color: #eee;
+				width: 45%;
+		}
+		.bl_gnavBtn span:nth-of-type(1) {
+				top: 15px;
+		}
+		.bl_gnavBtn span:nth-of-type(2) {
+				top: 23px;
+		}
+		.bl_gnavBtn span:nth-of-type(3) {
+				top: 31px;
+		}
+		.bl_gnavBtn.active .bl_gnavBtn_area {
+				-webkit-transform: rotateY(-360deg);
+				        transform: rotateY(-360deg);
+		}
+		.bl_gnavBtn.active span:nth-of-type(1) {
+				top: 18px;
+				left: 18px;
+				-webkit-transform: translateY(6px) rotate(-135deg);
+				        transform: translateY(6px) rotate(-135deg);
+				width: 30%;
+		}
+		.bl_gnavBtn.active span:nth-of-type(2) {
+				opacity: 0;
+		}
+		.bl_gnavBtn.active span:nth-of-type(3) {
+				top: 30px;
+				left: 18px;
+				-webkit-transform: translateY(-6px) rotate(135deg);
+				        transform: translateY(-6px) rotate(135deg);
+				width: 30%;
+		}
+}
 .ly_visual {
 		position: relative;
 		height: 100vh;
@@ -952,6 +1166,33 @@ body.appear .ly_visual::after {
 		        animation: visualbgRLExtendAnime 0.2s 1s forwards ease-in-out;
 }
 
+@media screen and (max-width: 960px) {
+		.ly_visual {
+				height: 90vh;
+		}
+
+		.bl_visual_img {
+				width: 100%;
+				height: 90vh;
+		}
+		.bl_visual_title {
+				font-size: 2.1rem;
+		}
+		.bl_visual_sns {
+				left: 20px;
+				bottom: 16px;
+		}
+		.bl_visual_sns ul li {
+				margin: 0 2px;
+		}
+}
+@media screen and (max-width: 500px) {
+		.bl_visual_title {
+				font-size: 7vw;
+				top: inherit;
+				bottom: 13%;
+		}
+}
 .ly_service {
 		padding: 10% 0 10% 15%;
 }
@@ -995,6 +1236,37 @@ body.appear .ly_visual::after {
 		background-size: cover;
 }
 
+@media screen and (max-width: 768px) {
+		.ly_service {
+				padding: 30% 0 10% 30px;
+		}
+}
+@media screen and (max-width: 650px) {
+		.ly_service_area section {
+				width: 100%;
+				margin-bottom: 100px;
+				padding-right: 10%;
+		}
+
+		.bl_serviceImg,
+.bl_serviceImg_img {
+				width: 100%;
+				height: 40vh;
+				background-position: right;
+		}
+
+		.bl_serviceImg {
+				margin-bottom: 50px;
+		}
+}
+@media screen and (max-width: 500px) {
+		.ly_service_lead {
+				padding-right: 10%;
+		}
+		.ly_service_lead br {
+				display: none;
+		}
+}
 .ly_newsImg {
 		position: relative;
 		z-index: 1;
@@ -1043,6 +1315,13 @@ body.appear .ly_visual::after {
 		opacity: 1;
 }
 
+@media screen and (max-width: 650px) {
+		.ly_gallery {
+				-webkit-columns: 2;
+				   -moz-columns: 2;
+				        columns: 2;
+		}
+}
 .ly_contact {
 		border-top: 1px solid #eee;
 		border-bottom: 1px solid #eee;
@@ -1087,6 +1366,25 @@ body.appear .ly_visual::after {
 		display: none;
 }
 
+@media screen and (max-width: 768px) {
+		.ly_contact_detail, .ly_contact_tel {
+				width: 50%;
+		}
+		.ly_contact_detail h2 {
+				font-size: 1.2rem;
+		}
+		.ly_contact_detail p {
+				text-align: left;
+		}
+		.ly_contact_tel br {
+				display: block;
+		}
+}
+@media screen and (max-width: 500px) {
+		.ly_contact {
+				font-size: 0.8rem;
+		}
+}
 .ly_footer {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1146,6 +1444,85 @@ body.appear .ly_visual::after {
 		display: block;
 		text-align: right;
 		color: #aaa;
+}
+
+@media screen and (max-width: 960px) {
+		.ly_footer {
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				padding: 5% 0;
+		}
+
+		.bl_footer_info {
+				width: 100%;
+				padding-bottom: 5%;
+				margin-bottom: 5%;
+				text-align: center;
+				border-bottom: 1px solid #ffffff33;
+		}
+		.bl_footer_info li:nth-of-type(2) dt::after {
+				content: "";
+				padding: 0;
+		}
+		.bl_footer_info li:nth-of-type(2) dd {
+				display: block;
+		}
+		.bl_footer_link {
+				width: auto;
+		}
+		.bl_footer_link ul {
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+		}
+		.bl_footer_link small {
+				padding: 10% 0;
+				text-align: center;
+		}
+		.bl_footer_link a {
+				margin: 0;
+		}
+}
+@media screen and (max-width: 500px) {
+		.bl_footer_link ul li {
+				margin: 0 10%;
+		}
+}
+.bl_splash {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		z-index: 999999;
+		text-align: center;
+		color: #eee;
+}
+.bl_splash_logo {
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+}
+.bl_splash_bg {
+		display: none;
+}
+
+body.appear .bl_splash_bg {
+		display: block;
+		content: "";
+		position: fixed;
+		z-index: 9999;
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		-webkit-transform: scaleX(0);
+		        transform: scaleX(0);
+		background-color: #960821;
+		-webkit-animation: splashAnime 0.8s ease-in-out forwards;
+		        animation: splashAnime 0.8s ease-in-out forwards;
 }
 
 .bgextend {
@@ -1259,6 +1636,38 @@ body.appear .ly_visual::after {
 		100% {
 				-webkit-transform: rotate(360deg);
 				transform: rotate(360deg);
+		}
+}
+.bl_underLine li a {
+		position: relative;
+}
+.bl_underLine li a::after {
+		content: "";
+		position: absolute;
+		bottom: 16px;
+		left: 25%;
+		width: 50%;
+		height: 1px;
+		background-color: #eee;
+		-webkit-transition: all 0.25s;
+		transition: all 0.25s;
+		-webkit-transform: scale(0, 1);
+		        transform: scale(0, 1);
+		-webkit-transform-origin: left top;
+		        transform-origin: left top;
+}
+.bl_underLine li li a::after {
+		display: none;
+}
+.bl_underLine li.current a:hover,
+.bl_underLine li a:hover::after {
+		-webkit-transform: scale(1, 1);
+		        transform: scale(1, 1);
+}
+
+@media screen and (max-width: 960px) {
+		.bl_underLine li a::after {
+				display: none;
 		}
 }
 .bl_openSearch {
@@ -1545,6 +1954,21 @@ body.appear .ly_visual::after {
 		        animation: displayAnime 2s forwards;
 }
 
+@media screen and (max-width: 1200px) {
+		.bl_tab {
+				width: 100%;
+		}
+}
+@media screen and (max-width: 768px) {
+		.ly_news {
+				padding: 0 0 5% 30px;
+		}
+}
+@media screen and (max-width: 500px) {
+		.bl_tab_btn li a {
+				padding: 8px 20px;
+		}
+}
 .zoomInRotate {
 		-webkit-backface-visibility: hidden;
 		        backface-visibility: hidden;
