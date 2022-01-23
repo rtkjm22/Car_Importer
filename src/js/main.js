@@ -118,26 +118,26 @@ const windowWidth = window.innerWidth || document.documentElement.clientWidth ||
 if (windowWidth >= 768) {
   const respImg = [
     {
-    src: './src/img/main_01.jpg'
+    src: './src/img/main_01.png'
     },
     {
-    src: './src/img/main_02.jpg'
+    src: './src/img/main_02.png'
     },
     {
-    src: './src/img/main_03.jpg'
+    src: './src/img/main_03.png'
     }
   ]
   mainVisual(respImg);
 } else {
   const respImg = [
     {
-    src: './src/img/main_01_sp.jpg'
+    src: './src/img/main_01_sp.png'
     },
     {
-    src: './src/img/main_02_sp.jpg'
+    src: './src/img/main_02_sp.png'
     },
     {
-    src: './src/img/main_03_sp.jpg'
+    src: './src/img/main_03_sp.png'
     }
   ]
   mainVisual(respImg);

@@ -1232,7 +1232,7 @@ body.appear .ly_visual::after {
 }
 .bl_serviceImg_img {
 		height: 60vh;
-		background: url("/src/img/01.jpg") no-repeat center;
+		background: url("/src/img/01.png") no-repeat center;
 		background-size: cover;
 }
 
@@ -1276,7 +1276,7 @@ body.appear .ly_visual::after {
 }
 .ly_newsImg_img {
 		height: 60vh;
-		background: url("/src/img/02.jpg") no-repeat center;
+		background: url("/src/img/02.png") no-repeat center;
 		background-size: cover;
 }
 .ly_newsImg_img::after {
